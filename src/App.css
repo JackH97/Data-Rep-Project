@@ -1,9 +1,22 @@
 .App {
   text-align: center;
+  background-color: Black;
+  background-size: cover;
+  
 }
 
 .App-logo {
   height: 40vmin;
+}
+
+.Text{
+  color: white;
+  text-align: center;
+}
+
+.playa{
+  color: black;
+  text-align: center;
 }
 
 .App-header {
@@ -19,4 +32,11 @@
 
 .App-link {
   color: #09d3ac;
+}
+
+.profile {
+  margin: auto;
+  width: 50%;
+  font-size: 40px;
+
 }

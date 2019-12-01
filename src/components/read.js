@@ -33,7 +33,7 @@ constructor(){
     }
     render(){
         return(
-            <div>
+            <div className="playa">
                 <h1>Hello from Read Component</h1>
                 <Players myPlayers={this.state.players} ReloadDataMethod={this.ReloadDataMethod} ></Players>
             </div>

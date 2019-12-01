@@ -51,8 +51,8 @@ class Create extends React.Component {
 
   render() {
     return (
-      <div>
-        <h1>Hello from Create component</h1>
+      <div className="Text">
+        <h1>Input Player Infomation</h1>
         <form onSubmit={this.handleSubmit}>
         <div className='form-group'>
           <label>Player Name</label>

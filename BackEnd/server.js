@@ -32,56 +32,32 @@ const playerschema = new Schema({
     image:String
 })
 
-const PlayerModel = mongoose.model('movie', playerschema);
+const PlayerModel = mongoose.model('players', playerschema);
+
+
+const contactschema = new Schema({
+    name:String,
+    email:String,
+    issue:String
+})
+
+const ContactModel = mongoose.model('contact', contactschema);
 
 
 app.get('/', (req, res) => res.send('Hello World!'))
-
-app.get('/whatever', (req, res) => {
-    res.send('whatever')
-})
-
-app.get('/name', (req, res) => {
-    console.log(req.query.lastname)
-    res.send('Welcome ' + req.query.firstname +
-        ' ' + req.query.lastname);
-})
-
-app.get('/name/:name', (req, res) => {
-    PlayerModel.findOne({name:req.params.name},
-    (error,data)=>{
-        res.json(data);
-    }
-    )
-})
-
-app.get('/test', (req, res) => {
-    res.sendFile(path.join(__dirname + '/index.html'));
-})
 
 app.get('/api/players', (req, res) => {
 
     PlayerModel.find((error, data) =>{
         res.json({players:data});
     })
-    // const myplayers = [
-    //     {
-    //         "name": "Avengers: Infinity War",
-    //         "dob": "2018",
-    //         "image": "https://m.media-amazon.com/images/M/MV5BMjMxNjY2MDU1OV5BMl5BanBnXkFtZTgwNzY1MTUwNTM@._V1_SX300.jpg"
-    //     },
-    //     {
-    //         "name": "Captain America: Civil War",
-    //         "dob": "2016",
-    //         "image": "https://m.media-amazon.com/images/M/MV5BMjQ0MTgyNjAxMV5BMl5BanBnXkFtZTgwNjUzMDkyODE@._V1_SX300.jpg"
-    //     }
-    // ];
+})
 
-    // res.status(200).json(
-    //     {
-    //         players: myplayers,
-    //         message: 'Data Sent'
-    //     });
+app.get('/api/contact', (req, res) => {
+
+    ContactModel.find((error, data) =>{
+        res.json({contact:data});
+    })
 })
 
 app.get('/api/players/:id', (req, res)=>{
@@ -135,9 +111,21 @@ app.post('/api/players', (req,res)=>{
 
     res.json('post recieved!');
 })
-app.get('/hello/:name', (req, res) => {
-    console.log(req.params.name);
-    res.send('Hello ' + req.params.name)
+
+
+app.post('/api/contact', (req,res)=>{
+    console.log('Post request Successful');
+    console.log(req.body.name);
+    console.log(req.body.email);
+    console.log(req.body.issue);
+
+    ContactModel.create({
+        name:req.body.name, 
+        email:req.body.email, 
+        issue:req.body.issue
+    });
+
+    res.json('post recieved!');
 })
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))

@@ -68,7 +68,7 @@ handlePlayerNameChange(e){
 
     render(){
         return(
-            <div>
+            <div className="Text"> 
                 <h1>Hello from Edit component</h1>
                 <form onSubmit={this.handleSubmit}>
         <div className='form-group'>
@@ -101,7 +101,7 @@ handlePlayerNameChange(e){
         <div>
           <input
           type="submit"
-          value="Edit Player">
+          value="Submit Edited Player">
           </input>
         </div>
         </form>

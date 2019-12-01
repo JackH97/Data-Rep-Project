@@ -27,19 +27,21 @@ class playerItem extends React.Component{
             <div>
 
 
-  <Card  border="primary" style={{ width: '28rem' }}>
+<div className="profile">
+  <Card  border="primary" >
   <Card.Header>{this.props.player.name}</Card.Header>
   <Card.Body>
-    <blockquote className="blockquote mb-0">
-    <img src={this.props.player.image}></img>
+    <img src={this.props.player.image} width="500px">
+    </img>
       <footer>
       {this.props.player.dob}
       </footer>
-    </blockquote>
   </Card.Body>
   <Button variant="danger" onClick={this.DeletePlayer}>Delete</Button>
 <Link to={"/edit/" + this.props.player._id} className="btn btn-primary">Edit</Link>
 </Card>
+<br></br>
+</div>
             </div>
         )
     }

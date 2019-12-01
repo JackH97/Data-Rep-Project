@@ -9,6 +9,7 @@ import { Switch, Route, BrowserRouter } from 'react-router-dom'
 import Create from './components/create';
 import Read from './components/read';
 import Edit from './components/edit';
+import Contact from './components/contact';
 
 
 class App extends React.Component {
@@ -17,11 +18,13 @@ class App extends React.Component {
     return (
       <BrowserRouter>
         <div className="App">
-          <Navbar bg="primary" variant="dark">
+
+          <Navbar bg="dark" variant="dark">
             <Nav className="mr-auto">
               <Nav.Link href="/">Home</Nav.Link>
-              <Nav.Link href="/read">Read</Nav.Link>
-              <Nav.Link href="/create">Create</Nav.Link>
+              <Nav.Link href="/read">Players Submitted</Nav.Link>
+              <Nav.Link href="/create">Create Player</Nav.Link>
+              <Nav.Link href="/contact">Contact Us</Nav.Link>
             </Nav>
           </Navbar>
           <Switch>
@@ -29,6 +32,7 @@ class App extends React.Component {
             <Route path="/create" component={Create} />
             <Route path="/read" component={Read} />
             <Route path="/edit/:id" component={Edit} />
+            <Route path="/contact" component={Contact} />
           </Switch>
         </div>
       </BrowserRouter>
