@@ -6,6 +6,7 @@ class Create extends React.Component {
   constructor(props){
     super(props);
 
+    //sets variables and the state
     this.state = {Name:'',
                   DOB:'',
                 Image:''};
@@ -16,6 +17,8 @@ class Create extends React.Component {
     this.handlePlayerimageChange = this.handlePlayerimageChange.bind(this);
   }
   
+//the handles underneath save the details for the players required values
+
   handlePlayerNameChange(e){
     this.setState({Name: e.target.value});
   }
@@ -33,7 +36,7 @@ class Create extends React.Component {
     +"       "+ this.state.Image);
     e.preventDefault();
     
-    
+    //stores info
                 const newPlayer = {
                   name: this.state.Name,
                   dob: this.state.DOB,

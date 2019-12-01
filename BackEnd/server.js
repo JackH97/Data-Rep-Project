@@ -26,15 +26,16 @@ app.use(bodyParser.json())
 
 const Schema = mongoose.Schema;
 
+// the constant that holds the player info and saves to the server
 const playerschema = new Schema({
     name:String,
     dob:String,
     image:String
 })
 
-const PlayerModel = mongoose.model('players', playerschema);
+const PlayerModel = mongoose.model('movies', playerschema);
 
-
+// the constant that holds the contact info and saves to the server
 const contactschema = new Schema({
     name:String,
     email:String,
@@ -97,6 +98,7 @@ app.get('/api/players/:id', (req,res)=>{
     })
 })
 
+//tells the terminal in visual studion code that it was posted sucessful if info is received 
 app.post('/api/players', (req,res)=>{
     console.log('Post request Successful');
     console.log(req.body.name);

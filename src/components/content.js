@@ -4,6 +4,7 @@ import Carousel from 'react-bootstrap/Carousel';
 
 class Content extends React.Component {
 
+  //imported carousel from bootstrap and did slideshow featuring different players and clicking image of player brings you to wiki page of that player
   render() {
     return (
       <div className="Text">
@@ -12,7 +13,7 @@ class Content extends React.Component {
         <br></br>
         <br></br>
         <h3>Click Image to direct you to Players Wiki Page</h3>
-
+        
         <Carousel>
           <Carousel.Item>
             <a href="https://en.wikipedia.org/wiki/Brian_O%27Driscoll"><img

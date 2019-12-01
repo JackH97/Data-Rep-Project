@@ -7,6 +7,7 @@ class Contact extends React.Component {
     constructor(props){
         super(props);
     
+        //functions to handle each inputted details
         this.state = {Name:'',
                       Email:'',
                     Issue:''};
@@ -30,6 +31,7 @@ class Contact extends React.Component {
       }
     
       handleSubmit(e){
+          // message that pops up on screen to tell user that their info went through
         alert('Request has been Recieved. Thank You !!');
         e.preventDefault();
         

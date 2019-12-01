@@ -15,6 +15,9 @@ class Edit extends React.Component{
         this.handlePlayerDOBChange = this.handlePlayerDOBChange.bind(this);
         this.handlePlayerimageChange = this.handlePlayerimageChange.bind(this);
       }
+
+      
+      //when component is loaded the form is loaded with the player details saved from server
 componentDidMount(){
     alert(this.props.match.params.id);
 

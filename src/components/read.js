@@ -22,6 +22,7 @@ constructor(){
         });
     }
 
+    //reloads page once player gets deleted
     ReloadDataMethod(){
         axios.get('http://localhost:4000/api/players')
         .then((response)=>{
@@ -31,10 +32,11 @@ constructor(){
             console.log(error);
         });
     }
+    //prints info regarding players from database
     render(){
         return(
             <div className="playa">
-                <h1>Hello from Read Component</h1>
+                <h1>Players from database</h1>
                 <Players myPlayers={this.state.players} ReloadDataMethod={this.ReloadDataMethod} ></Players>
             </div>
         );

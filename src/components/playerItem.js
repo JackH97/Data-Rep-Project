@@ -7,11 +7,13 @@ import { Link } from 'react-router-dom';
 
 class playerItem extends React.Component{
 
+  //used for deleting
   constructor(){
     super();
     this.DeletePlayer = this.DeletePlayer.bind(this);
   }
 
+  //function delete for player
   DeletePlayer(e){
     console.log("Delete Clicked");
     axios.delete("http://localhost:4000/api/players/"+this.props.player._id)

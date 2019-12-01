@@ -14,8 +14,9 @@
   text-align: center;
 }
 
+/* for line of text in read.js */
 .playa{
-  color: black;
+  color: white;
   text-align: center;
 }
 
@@ -33,7 +34,7 @@
 .App-link {
   color: #09d3ac;
 }
-
+/* player card*/
 .profile {
   margin: auto;
   width: 50%;
